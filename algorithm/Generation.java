@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.optaplanner.examples.cneat.algorithm.Fitness.fitness;
+import static org.optaplanner.examples.cneat.algorithm.LocalSearch.localSearch;
 import static org.optaplanner.examples.cneat.operators.Crossover.crossover;
 import static org.optaplanner.examples.cneat.operators.FunctionalMutation.functionalMutationOfConnection;
 import static org.optaplanner.examples.cneat.operators.FunctionalMutation.functionalMutationOfNode;
@@ -32,6 +33,7 @@ public class Generation {
         fitness(offspring, inputsList, outputsList);
 
         // 3b. 局部搜索(遍历个体, 搜素n次, 接受好解)
+        localSearch(offspring, inputsList, outputsList);
 
         return offspring;
     }
